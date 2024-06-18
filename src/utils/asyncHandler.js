@@ -2,12 +2,12 @@
 
 const asyncHandler = (requestHandler) => {
   //Async Handler with Promise
-  (req, res, next) => {
+  return (req, res, next) => {
     Promise.resolve(requestHandler(req, res, next)).catch((err) => next);
   };
 };
 
-export default asyncHandler;
+export  {asyncHandler};
 
 // const asyncHandler=()=>{}
 // const asyncHandler=(func)=>()={}//passing a HOF
